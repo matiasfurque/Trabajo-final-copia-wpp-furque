@@ -332,7 +332,17 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+
   aside {
-    display: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .chat {
+    width: 100%;
+    height: auto;
   }
 }
