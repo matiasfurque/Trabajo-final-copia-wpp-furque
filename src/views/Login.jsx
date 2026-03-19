@@ -50,7 +50,7 @@ const Login = () => {
 
           <button>Ingresar</button>
 
-          <Link className="button-reg" to="/registro">
+          <Link className="button-reg" to="/register">
             Registrarse
           </Link>
           <p className='Acerca'>
