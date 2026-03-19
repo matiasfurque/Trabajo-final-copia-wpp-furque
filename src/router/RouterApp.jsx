@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Home } from '../views/Home';
 import { Login } from '../views/Login';
 import { Registro } from '../pages/Registro';
@@ -8,7 +8,7 @@ import { RouteProtected } from '../components/RouteProtected';
 
 const RouterApp = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route
           path="/"
@@ -23,7 +23,7 @@ const RouterApp = () => {
         <Route path="/acerca" element={<Acerca />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
