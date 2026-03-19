@@ -1,7 +1,6 @@
 import { useContext, useState } from "react"
 import { ChatContext } from "../context/ChatContext"
 
-
 const Aside = () => {
   const [search, setSearch] = useState("")
 
@@ -15,7 +14,6 @@ const Aside = () => {
     const fullName = `${user.firstName} ${user.lastName}`
     return fullName.toLowerCase().includes(search.toLowerCase())
   })
-
 
   return (
     <aside>
