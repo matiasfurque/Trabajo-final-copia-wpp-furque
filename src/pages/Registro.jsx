@@ -15,7 +15,6 @@ const Registro = () => {
     event.preventDefault()
     setError("")
 
-    // Validaciones basicas para el registro del usuario 
     if (!nombre || !email || !password) {
       setError("Todos los campos son obligatorios")
       return

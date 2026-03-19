@@ -1,16 +1,41 @@
-# React + Vite
+# Chat de Fútbol ⚽ (Copia de WhatsApp)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Descripción del proyecto
+Es una aplicación de chat inspirada en WhatsApp con una temática de fútbol. Permite a los usuarios iniciar sesión, registrarse, ver una lista de contactos (jugadores de fútbol famosos) y simular envio de mensajes en tiempo real. La aplicación cuenta con  animaciones fluidas y es totalmente responsiva para dispositivos móviles.
 
-Currently, two official plugins are available:
+### Tecnologías utilizadas
+*   **React 19**: Biblioteca principal para la interfaz de usuario.
+*   **Vite**: Herramienta de construcción y servidor de desarrollo ultra rápido.
+*   **React Router 7**: Gestión de navegación y rutas dinámicas (`BrowserRouter`).
+*   **Context API**: Manejo de estado global para autenticación y chats.
+*   **CSS3**: Estilos personalizados con variables, flexbox, grid y media queries para diseño responsivo.
+*   **LocalStorage**: Persistencia de datos de usuarios registrados y mensajes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Instrucciones para ejecutar el proyecto localmente
+1.  Clonar el repositorio.
+2.  Abrir una terminal en la carpeta del proyecto.
+3.  Instalar las dependencias:
+    ```bash
+    npm install
+    ```
+4.  Iniciar el servidor de desarrollo:
+    ```bash
+    npm run dev
+    ```
+5.  Abrir el navegador en `http://localhost:5173`.
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Explicación de la estructura del proyecto
+*   **`src/components`**: Componentes reutilizables como el `Chat`, `Aside` y `RouteProtected`.
+*   **`src/context`**: `ChatContext.jsx` maneja el estado global de la app (usuario logueado, chats, selección de contactos).
+*   **`src/pages`**: Páginas principales como `Registro` y `Acerca`.
+*   **`src/router`**: Configuración de rutas con `BrowserRouter`.
+*   **`src/services`**: `mockApi.js` contiene la base de datos inicial de jugadores y mensajes.
+*   **`src/styles`**: `main.css` contiene todos los estilos y media queries para diseño responsivo.
+*   **`src/views`**: Vistas de la aplicación como `Home`, `Login` y `NotFound`.
+*   **`index.html`**: Punto de entrada HTML.
+*   **`vercel.json`**: Configuración específica para el despliegue en Vercel.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Este proyecto fue desarrollado como parte de un trabajo final de la UTN, enfocándose en la estética visual y la funcionalidad móvil.
