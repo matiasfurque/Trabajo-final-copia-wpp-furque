@@ -6,16 +6,22 @@ const Chat = () => {
   const [text, setText] = useState('');
   const chatBodyRef = useRef(null);
 
-  const { selectedUser, handleMessages, loggedUser, logout } = useContext(ChatContext);
+  const { 
+    selectedUser, 
+    handleMessages, 
+    loggedUser, 
+    logout, 
+    handleSelectedUserId 
+  } = useContext(ChatContext);
 
   const navigate = useNavigate();
 
   const sendMessage = () => {
-    if (!text) return;
+    if (!text.trim()) return;
 
     const now = new Date();
     const newMessage = {
-      id: Date.now(),
+      id: Date.now() + Math.random(),
       author: loggedUser.email,
       text,
       isMine: true,
@@ -27,18 +33,28 @@ const Chat = () => {
   };
 
   useEffect(() => {
-  if (chatBodyRef.current) {
-    chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
-  }
-}, [selectedUser?.messages?.length]);
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
+    }
+  }, [selectedUser?.messages?.length]);
 
   if (!selectedUser) {
     return <p className="not-found-chat">Selecciona un chat 💬</p>;
   }
 
   return (
-    <section className="chat">
-      <header>
+    <section className={`chat ${selectedUser ? "active" : ""}`}>
+
+      <header className="chat-header">
+
+       
+        <button
+          className="back-btn"
+          onClick={() => handleSelectedUserId(null)}
+        >
+          ⬅
+        </button>
+
         <h2>
           {selectedUser.firstName} {selectedUser.lastName}
         </h2>
@@ -51,11 +67,15 @@ const Chat = () => {
         >
           Salir
         </button>
+
       </header>
 
       <div className="chat-body" ref={chatBodyRef}>
         {selectedUser.messages.map((msg) => (
-          <div key={msg.id} className={`message ${msg.isMine ? 'me' : 'received'}`}>
+          <div
+            key={msg.id}
+            className={`message ${msg.isMine ? 'me' : 'received'}`}
+          >
             <p>{msg.text}</p>
             <span className="time">{msg.time}</span>
           </div>
@@ -70,6 +90,7 @@ const Chat = () => {
         />
         <button onClick={sendMessage}>Enviar</button>
       </div>
+
     </section>
   );
 };

@@ -331,9 +331,18 @@ a:hover {
   text-align: center;
 }
 
+.back-btn {
+  display: none;
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
+
   .app {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   aside {
@@ -341,8 +350,29 @@ a:hover {
     height: 100vh;
   }
 
+  /* 🔥 ocultar aside cuando chat está activo */
+  .app.chat-selected aside {
+    display: none;
+  }
+
   .chat {
     width: 100%;
-    height: 100vh; 
+    height: 100vh;
+    display: none; 
+  }
+
+  /* 🔥 mostrar chat cuando está seleccionado */
+  .app.chat-selected .chat {
+    display: flex;
+  }
+
+  /* 🔥 botón volver visible solo en mobile */
+  .back-btn {
+    display: block !important;
+  }
+
+  /* 🔥 ocultar placeholder de chat en mobile si no hay selección */
+  .not-found-chat {
+     display: none;
   }
 }
