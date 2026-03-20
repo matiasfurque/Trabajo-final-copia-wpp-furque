@@ -97,7 +97,17 @@ li img {
   background-color: #1e293b;
 }
 
-.chat header button {
+.back-btn {
+  display: none;
+  font-size: 18px;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #ccc;
+
+}
+.exit-button {
   padding: 6px 12px;
   border: none;
   border-radius: 6px;
@@ -105,6 +115,8 @@ li img {
   color: white;
   cursor: pointer;
 }
+
+
 
 .chat-body {
   flex: 1;
@@ -332,13 +344,7 @@ a:hover {
   text-align: center;
 }
 
-.back-btn {
-  display: none;
-  font-size: 18px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+
 
 @media (max-width: 768px) {
 
