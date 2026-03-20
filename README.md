@@ -85,4 +85,3 @@ https://trabajo-final-copia-wpp-furque.vercel.app/
 Documentación completa del proyecto:
 https://deepwiki.com/matiasfurque/trabajo-final-copia-wpp-furque
 
----
